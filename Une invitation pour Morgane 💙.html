@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Une invitation pour Morgane 💙</title>
+<style>
+:root{--bg:#f6efe3;--ink:#2f4a5c;--soft:#5d7b8c;--card:rgba(255,255,255,.62);--line:#9bbfd0;--accent:#3d7fa8;--accent2:#c9788f;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15232d;--ink:#e8eef2;--soft:#a9c0cc;--card:rgba(255,255,255,.07);--line:#42677c;--accent:#7fc0e6;--accent2:#e59ab0}}
+:root[data-theme="dark"]{--bg:#15232d;--ink:#e8eef2;--soft:#a9c0cc;--card:rgba(255,255,255,.07);--line:#42677c;--accent:#7fc0e6;--accent2:#e59ab0}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.6;overflow-x:hidden;
+background-image:radial-gradient(ellipse at 15% 10%,rgba(120,180,210,.35),transparent 50%),radial-gradient(ellipse at 90% 40%,rgba(230,150,175,.25),transparent 45%),radial-gradient(ellipse at 20% 90%,rgba(150,200,190,.3),transparent 50%);background-attachment:fixed}
+main{max-width:560px;margin:0 auto;padding:28px 20px 60px;position:relative;z-index:2}
+.film{text-align:center;font-family:"Courier New",monospace;letter-spacing:.25em;font-size:.72rem;color:var(--soft);text-transform:uppercase;margin:10px 0}
+h1{font-size:2.1rem;line-height:1.2;text-align:center;margin:.3em 0;color:var(--accent);font-weight:normal;font-style:italic}
+.scene{background:var(--card);border:1px dashed var(--line);border-radius:18px 6px 18px 6px;padding:20px 18px;margin:26px 0;opacity:0;transform:translateY(18px);transition:all .9s ease;backdrop-filter:blur(2px)}
+.scene.in{opacity:1;transform:none}
+.tag{font-family:"Courier New",monospace;font-size:.7rem;letter-spacing:.2em;color:var(--accent2);text-transform:uppercase;margin-bottom:8px}
+p{margin:.5em 0}
+.tw{min-height:3.2em}
+.big{font-size:1.25rem;text-align:center;font-style:italic}
+ul.outfits{list-style:none;padding:0;margin:12px 0}
+ul.outfits li{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px dotted var(--line)}
+ul.outfits li:last-child{border:0}
+.em{font-size:1.7rem}
+.decree{text-align:center;border:2px double var(--accent);border-radius:10px;padding:22px 16px;background:var(--card)}
+.decree h2{margin:.2em 0;font-weight:normal;color:var(--accent);font-size:1.3rem;font-variant:small-caps;letter-spacing:.06em}
+.seal{font-size:2rem}
+.sig{text-align:right;font-style:italic;color:var(--soft)}
+button{display:block;width:100%;margin:26px 0 8px;padding:16px 14px;border:0;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font:inherit;font-size:1.05rem;cursor:pointer;box-shadow:0 8px 22px rgba(61,127,168,.35);transition:transform .2s}
+button:active{transform:scale(.97)}
+#yes{display:none;text-align:center;font-size:1.15rem;font-style:italic;color:var(--accent)}
+.float{position:fixed;top:-40px;pointer-events:none;z-index:1;animation:fall linear forwards;opacity:.85}
+@keyframes fall{to{transform:translateY(115vh) rotate(25deg)}}
+.conf{position:fixed;top:-20px;width:9px;height:14px;z-index:5;pointer-events:none;animation:fall 3.2s ease-in forwards}
+.cursor::after{content:"▌";color:var(--accent);animation:bl 1s steps(2) infinite}
+@keyframes bl{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.float{display:none}.scene{transition:none}}
+</style>
+</head>
+<body>
+<main>
+<div class="film"></div>
+<div class="film" style="margin-bottom:0">— Bande-annonce —</div>
+<h1>Morgane,<br>ma belle tête 💙</h1>
+<div class="film">21 octobre · Séance unique · Entrée réservée</div>
+
+<section class="scene">
+<div class="decree">
+<div class="seal">🪼</div>
+<h2>Demande officielle</h2>
+<p>Par la présente, en bonne et due forme, il est solennellement demandé à</p>
+<p class="big"><strong>Morgane Marie GENEST, née le 21 octobre 1986</strong></p>
+<p>de bien vouloir réserver sa soirée du <strong>21 octobre</strong> et de se laisser emmener, en toute sérénité, vers une destination tenue secrète.</p>
+<p>Tu n’as rien à gérer : je m’occupe de tout. Afin de garder le mystère, je te demande juste de prévoir : une tenue chaude + une tenue où tu te sens parfaitement à l’aise + une tenue de soirée qui te fait te sentir bien + une tenue pour le boulot le lendemain.</p>
+<p>Réponse attendue avec enthousiasme.</p>
+<p class="sig">Signé : l'homme qui pense à toi 💙</p>
+</div>
+<button id="btn">J’accepte cette invitation à fêter mon anniversaire</button>
+<div id="yes">Fin. Générique. Rendez-vous le 21 octobre… je pense à toi. 💙🦄</div>
+</section>
+</main>
+<script>
+(function(){
+var sy=["💙","⭐","🦄","💙","✨"];
+function drop(){var e=document.createElement("div");e.className="float";e.textContent=sy[Math.floor(Math.random()*sy.length)];
+e.style.left=Math.random()*96+"vw";e.style.fontSize=(14+Math.random()*16)+"px";e.style.animationDuration=(9+Math.random()*8)+"s";
+document.body.appendChild(e);setTimeout(function(){e.remove()},18000)}
+setInterval(drop,1300);
+function type(el){var t=el.getAttribute("data-t"),i=0;el.classList.add("cursor");
+(function s(){el.textContent=t.slice(0,++i);if(i<t.length)setTimeout(s,28);else el.classList.remove("cursor")})()}
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");
+var tw=x.target.querySelector(".tw");if(tw&&!tw.dataset.d){tw.dataset.d=1;type(tw)}io.unobserve(x.target)}})},{threshold:.25});
+document.querySelectorAll(".scene").forEach(function(s){io.observe(s)});
+document.getElementById("btn").addEventListener("click",function(){
+var c=["#3d7fa8","#c9788f","#f2c14e","#8fcfc0","#b79ce2"];
+for(var i=0;i<90;i++){(function(i){setTimeout(function(){var d=document.createElement("div");d.className="conf";
+d.style.left=Math.random()*100+"vw";d.style.background=c[i%5];d.style.animationDuration=(2+Math.random()*2.5)+"s";
+document.body.appendChild(d);setTimeout(function(){d.remove()},5000)},i*20)})(i)}
+this.style.display="none";document.getElementById("yes").style.display="block"});
+})();
+</script>
+</body>
+</html>
